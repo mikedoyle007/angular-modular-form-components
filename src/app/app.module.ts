@@ -9,6 +9,7 @@ import { AgeComponent } from './age/age.component';
 import { AddressComponent } from './address/address.component';
 import { CountyComponent } from './address/county/county.component';
 import { StateComponent } from './address/state/state.component';
+import { DynamicUserComponent } from './dynamic-user/dynamic-user.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { StateComponent } from './address/state/state.component';
     AgeComponent,
     AddressComponent,
     CountyComponent,
-    StateComponent
+    StateComponent,
+    DynamicUserComponent
   ],
   imports: [
     BrowserModule,

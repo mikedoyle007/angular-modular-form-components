@@ -1,0 +1,51 @@
+<form [formGroup]="form">
+  <h1>Dynamic User Form</h1>
+  <div class="form-group" formArrayName="users">
+    <div *ngFor="let user of form.get('users').controls; let i = index">
+      <div class="panel panel-primary">
+        <div class="panel-heading">User # {{ i + 1 }}</div>
+
+        <!-- 
+          Using non-reusable components
+
+          User the structure below when you have the following structure:
+          class:
+          form: FormGroup
+            users: FormArray
+              FormGroup
+                name: formControl
+                address: FormGroup
+                  county: formControl
+                  state: formControl
+         -->
+        <div class="panel-body" [formGroupName]="i">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" formControlName="name">
+
+          <div class="form-group" formGroupName="address">
+            <label for="county">County</label>
+            <input type="text" class="form-control" formControlName="county">
+  
+            <label for="state">State</label>
+            <input type="text" class="form-control" formControlName="state">
+          </div>
+        </div>
+            
+        <!-- FIXME: get this to work using re-usable components -->
+        <!-- <div class="panel-body" [formGroupName]="i">
+          <app-name [parent]="i"></app-name>
+        </div>
+      </div> -->
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <span><h1>Dynamic User Form</h1></span>
+    Form is valid: {{ form.valid }}
+  </div>
+  <div class="container">
+    Form contents: {{ form.value | json }}
+  </div>
+</form>

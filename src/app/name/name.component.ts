@@ -9,7 +9,7 @@ import { FormGroup, FormControl, FormArray, FormBuilder, Validators } from '@ang
 })
 export class NameComponent implements OnInit {
 
-  @Input() parent: FormGroup;
+  @Input() parent:  FormGroup;
 
   constructor() { }
 

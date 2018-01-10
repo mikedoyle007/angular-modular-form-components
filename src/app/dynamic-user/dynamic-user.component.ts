@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormArray, FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, FormArray, Validators } from "@angular/forms";
 
 
 @Component({
-  selector: 'app-user',
-  templateUrl: './user.component.html',
-  styleUrls: ['./user.component.scss']
+  selector: 'app-dynamic-user',
+  templateUrl: './dynamic-user.component.html',
+  styleUrls: ['./dynamic-user.component.scss']
 })
-export class UserComponent implements OnInit {
+export class DynamicUserComponent implements OnInit {
 
-  form:             FormGroup;
+  form: FormGroup;
 
   constructor(private fb: FormBuilder) {}
 
@@ -19,8 +19,15 @@ export class UserComponent implements OnInit {
 
   buildForm(): void {
     this.form = this.fb.group({
+      users: new FormArray([
+        this.createUser()
+      ])
+    });
+  }
+
+  createUser(): FormGroup {
+    return this.fb.group({
       name: ['', Validators.required],
-      age: ['', Validators.required],
       address: this.createAddress()
     });
   }
