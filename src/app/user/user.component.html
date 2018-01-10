@@ -1,0 +1,16 @@
+<form [formGroup]="form">
+  <app-name [parent]="form"></app-name>
+  <app-age [parent]="form"></app-age>
+
+  <div>
+    <app-address 
+    [parent]="form.controls.address"></app-address>
+  </div>
+
+  <div class="container">
+    Form is valid: {{ form.valid }}
+  </div>
+  <div class="container">
+    Form contents: {{ form.value | json }}
+  </div>
+</form>
