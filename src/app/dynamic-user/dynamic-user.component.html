@@ -8,7 +8,7 @@
         <!-- 
           Using non-reusable components
 
-          User the structure below when you have the following structure:
+          Use the structure below when you have the following structure:
           class:
           form: FormGroup
             users: FormArray
@@ -18,7 +18,7 @@
                   county: formControl
                   state: formControl
          -->
-        <div class="panel-body" [formGroupName]="i">
+        <!-- <div class="panel-body" [formGroupName]="i">
           <label for="name">Name</label>
           <input type="text" class="form-control" formControlName="name">
 
@@ -29,13 +29,23 @@
             <label for="state">State</label>
             <input type="text" class="form-control" formControlName="state">
           </div>
-        </div>
+        </div> -->
             
-        <!-- FIXME: get this to work using re-usable components -->
+        <!-- 
+          Using re-usable individual components
+            (not wrapped in a parent component)
+
+          Use this structure for the same scaffold as above.
+         -->
         <!-- <div class="panel-body" [formGroupName]="i">
-          <app-name [parent]="i"></app-name>
-        </div>
-      </div> -->
+          <app-name [parent]="user"></app-name>
+          <div class="form-group" formGroupName="address">
+            <app-address [parent]="user.get('address')"></app-address>
+          </div>
+        </div> -->
+
+        <!-- FIXME: build one that is wrapped in a parent container -->
+
 
       </div>
     </div>
