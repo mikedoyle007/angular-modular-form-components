@@ -1,0 +1,10 @@
+<form [formGroup]="parent">
+    <h1>User Array Form</h1>
+    <app-name [parent]="parent"></app-name>
+  
+    <div formGroupName="address">
+      <app-address 
+      [parent]="parent.get('address')"></app-address>
+    </div>
+  
+  </form>

@@ -10,6 +10,7 @@ import { AddressComponent } from './address/address.component';
 import { CountyComponent } from './address/county/county.component';
 import { StateComponent } from './address/state/state.component';
 import { DynamicUserComponent } from './dynamic-user/dynamic-user.component';
+import { UserArrayComponent } from './user-array/user-array.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DynamicUserComponent } from './dynamic-user/dynamic-user.component';
     AddressComponent,
     CountyComponent,
     StateComponent,
-    DynamicUserComponent
+    DynamicUserComponent,
+    UserArrayComponent
   ],
   imports: [
     BrowserModule,

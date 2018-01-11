@@ -5,7 +5,9 @@
       <div class="panel panel-primary">
         <div class="panel-heading">User # {{ i + 1 }}</div>
 
-        <!-- 
+        <!-- TODO: uncomment as needed... -->
+
+        <!-- 1. 
           Using non-reusable components
 
           Use the structure below when you have the following structure:
@@ -31,7 +33,9 @@
           </div>
         </div> -->
             
-        <!-- 
+
+
+        <!-- 2. 
           Using re-usable individual components
             (not wrapped in a parent component)
 
@@ -40,12 +44,19 @@
         <!-- <div class="panel-body" [formGroupName]="i">
           <app-name [parent]="user"></app-name>
           <div class="form-group" formGroupName="address">
-            <app-address [parent]="user.get('address')"></app-address>
+          <app-address [parent]="user.get('address')"></app-address>
           </div>
         </div> -->
 
-        <!-- FIXME: build one that is wrapped in a parent container -->
 
+
+        <!-- 3. 
+          Using one parent (wrapper) re-usable component
+          for same structure as above
+         -->
+        <div class="panel-body" [formGroupName]="i">
+          <app-user-array [parent]="user"></app-user-array>
+        </div>
 
       </div>
     </div>

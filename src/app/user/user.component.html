@@ -1,18 +1,18 @@
 <form [formGroup]="form">
   <h1>User Form</h1>
   <app-name [parent]="form"></app-name>
-  <app-age [parent]="form"></app-age>
+  <!-- <app-age [parent]="form"></app-age> -->
 
-  <div>
+  <div formGroupName="address">
     <app-address 
-    [parent]="form.controls.address"></app-address>
+    [parent]="form.get('address')"></app-address>
   </div>
 
-  <div class="container">
+  <!-- <div class="container">
     <span><h1>User Form</h1></span>
     Form is valid: {{ form.valid }}
   </div>
   <div class="container">
     Form contents: {{ form.value | json }}
-  </div>
+  </div> -->
 </form>
